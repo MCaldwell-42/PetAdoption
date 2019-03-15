@@ -1,7 +1,8 @@
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
-    selectedDiv.InnerHTML = textToPrint;
+    selectedDiv.innerHTML = textToPrint;
 };
+
 
 const pets = [
     {
@@ -30,7 +31,7 @@ const pets = [
       color: "Black",
       specialSkill: "Burps minimally.",
       type: "dog",
-      imageUrl: "http://cdn.akc.org/content/article-body-image/funny-pembroke_welsh_corgi.jpg"
+      imageUrl: "https://cdn1-www.dogtime.com/assets/uploads/2015/09/black-dog-day-october-1-2.jpg"
     },
     {
       name: "Spooky",
@@ -215,3 +216,53 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
 ];
+
+const makePets = (selectedPets) => {
+
+    let domString = '';
+
+    selectedPets.forEach((pet) => {
+
+    domString += `<div id='pets'>`;
+    domString += `<h2>${pet.name}</h2>`;
+    domString += `<img src=${pet.imageUrl}>`;
+    domString += `<p>${pet.color}</p>`;
+    domString += `<p>${pet.specialSkill}</p>`;
+    domString += `<p>${pet.type}</p>`;
+    domString += `</div>`;
+    });
+printToDom('Adoptions', domString);
+};
+
+const buttonClick = (e) => {
+    const buttonId = e.target.id;
+
+    const selectedPets =[];
+    pets.forEach((pet) => {
+
+        if (pet.type === buttonId) {
+            selectedPets.push(pet);
+        } 
+    
+        makePets(selectedPets);
+    });
+        if (buttonId === 'All') {
+          makePets(pets);
+        } else {
+            makePets(selectedPets);
+        }
+};
+const buttonEvents = () => {
+    document.getElementById('dog').addEventListener('click', buttonClick);
+    document.getElementById('cat').addEventListener('click', buttonClick);
+    document.getElementById('dino').addEventListener('click', buttonClick);
+    document.getElementById('All').addEventListener('click', buttonClick);
+}
+
+const init = () => {
+    buttonEvents();
+    makePets(pets);
+    
+};
+
+init();
