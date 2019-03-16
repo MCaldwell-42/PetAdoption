@@ -1,3 +1,103 @@
 body {
+    background-color: darkgray;
+}
+
+header {
+    font-size: 2em;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+#Adoptions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+#pets {
+    width: 30%;
+    border: 2px solid gray;
+   text-align: center;
+   background-color: whitesmoke;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+img {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    padding: 4px;
+}
+
+.h2-wrapper {
+    background-color: lightgrey;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+button {
+    height: 4em;
+    width: 16em;
+    border: 1px solid black;
+}
+#petButtons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    margin-right: 300px;
+    margin-left: 300px;
+  
+}
+
+#cat {
+    background-color: aqua;
+    
+}
+
+#dog {
+    background-color: green;
+}
+
+#dino {
+    background-color: orange;
+}
+
+#All {
+    background-color: plum;
+}
+
+.cat {
     background-color: aqua;
 }
+
+.dog {
+    background-color: green;
+}
+
+.dino {
+    background-color: orange;
+}
+
+.btn {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: auto;
+}
+.skill {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+

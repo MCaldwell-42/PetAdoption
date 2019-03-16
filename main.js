@@ -224,11 +224,11 @@ const makePets = (selectedPets) => {
     selectedPets.forEach((pet) => {
 
     domString += `<div id='pets'>`;
-    domString += `<h2>${pet.name}</h2>`;
+    domString += `<div class='h2-wrapper'><h2>${pet.name}</h2></div>`;
     domString += `<img src=${pet.imageUrl}>`;
     domString += `<p>${pet.color}</p>`;
-    domString += `<p>${pet.specialSkill}</p>`;
-    domString += `<p>${pet.type}</p>`;
+    domString += `<div class='skill'><p>${pet.specialSkill}</p></div>`;
+    domString += `<div class='btn ${pet.type}'><p>${pet.type}</p></div>`;
     domString += `</div>`;
     });
 printToDom('Adoptions', domString);
